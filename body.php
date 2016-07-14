@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<?php foreach ($tasks as $tasksNumber => $task) : ?>
+		<?php foreach (shuffle_assoc($tasks) as $tasksNumber => $task) : ?>
 			<div class="task">
 				<div class="question">
 					<span>question <?php echo $tasksNumber; ?>:</span>
@@ -35,8 +35,9 @@
 						</div>
 					<? endif; ?>
 				</div>
+
 				<div class="answers">
-					<?php foreach($task['answers'] as $answerNumber => $answer) : ?>
+					<?php foreach(shuffle_assoc($task['answers']) as $answerNumber => $answer) : ?>
 						<div class="answer <?php if(in_array($answerNumber, $answers[$tasksNumber])) echo 'right'; ?>">
 							<?php echo htmlspecialchars($answer) ?>
 						</div>	
