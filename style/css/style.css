@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url(/style/fonts/fontawesome-webfont.eot?v=4.3.0);
+    src: url(/style/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),
+         url(/style/fonts/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),
+         url(/style/fonts/fontawesome-webfont.woff?v=4.3.0) format('woff'),
+         url(/style/fonts/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),
+         url(/style/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #333;
+    font-family: 'Open Sans';
+}
+
+body {
+    background-color: #ecf0f1;
+}
+
+
+
+.head .container {
+    padding: 25px 100px;
+    background-color: white;
+}
+
+.head .container div {
+    position: relative;
+    height: 57px;
+}
+
+.head .container img {
+    width: 205px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.head .container span {
+    color: #4d4d4d;
+    font-size: 34px;
+    font-weight: 100;
+    cursor: default;
+    position: absolute;
+    left: 225px;
+    top: 7px;
+}
+
+.container {
+    padding: 20px 100px;
+}
+
+.task {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.task .question {
+    padding: 10px;
+    border-bottom: 1px solid #bdc3c7;
+    margin-bottom: 10px;
+}
+
+.task .question * {
+    color: inherit;
+}
+
+.task .question.failed { background-color: #e74c3c; }
+.task .question.passed { background-color: #2ecc71; }
+
+.task .question.failed,
+.task .question.passed {
+    border-radius: 5px;
+    margin-bottom: 11px;
+    color: white;
+    border-bottom: none;
+}
+
+.task  .question span {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.task  .question .image {
+    text-align: center;
+    margin: 20px;
+}
+
+.task  .question .image img {
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px #bdc3c7;
+}
+
+.task .answers {
+    margin: 0 130px;
+}
+
+.task .answers .answer:first-child {
+    margin-top: 0;
+}
+
+.task .answers .answer {
+    margin-top: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border-left: 10px solid white;
+}
+
+.task .answers .answer:hover {
+    background-color: #3498db;
+}
+
+.task .answers.display .answer.right {
+    background-color: #2ecc71 !important;
+}
+
+.task .answers.display .answer.wrong {
+    background-color: #e74c3c !important;
+}
+
+.task .answers .answer.checked {
+    border-left: 10px solid #3498db;
+}
+
+.task .answers.display .answer.right,
+.task .answers.display .answer.wrong,
+.task .answers.display .answer.right:hover,
+.task .answers.display .answer.wrong:hover,
+.task .answers .answer:hover {
+    color: white;
+}
+
+.task .answers.display .answer:hover {
+    background: none;
+    color: inherit;
+}
