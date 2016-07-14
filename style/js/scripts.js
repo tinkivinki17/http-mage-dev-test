@@ -2,39 +2,71 @@ $(function(){
 	$(document).ready(function(){
 
 		$('#toggler').bind('click', function(){
-			if($(this).hasClass('on'))
+			if($(this).hasClass('on')) {
 				$(this).removeClass('on');
-			else
+				$('body').removeClass('showTips');
+			} else {
 				$(this).addClass('on');
+				$('body').addClass('showTips');
+			}
+		});
+
+		$('.close').live('click', function(){
+			$('.modalLayout').css('display', 'none');
 		});
 
 		$('.task .answers .answer').bind('click', function(){
-			var parent = $(this).parent();
+			$('.testType ').hide();
+
+			var answersContainer = $(this).parent();
 			// If we've displaied answers - disable clicks on this task.
-			if(!parent.hasClass('display')) {
+			if(!answersContainer.hasClass('display')) {
 				if($(this).hasClass('checked')) {
 					$(this).removeClass('checked');
 				} else {
 					$(this).addClass('checked');
 				}
 
-				if(parent.find('.checked').length == parent.find('.right').length) {
-					parent.find('.answer').each(function(){
+				if(answersContainer.find('.checked').length == answersContainer.find('.right').length) {
+					answersContainer.find('.answer').each(function(){
 						if($(this).hasClass('checked') && !$(this).hasClass('right')) {
 							$(this).addClass('wrong');
 						}
 					});
 
-					parent.addClass('display');
+					answersContainer.addClass('display');
 
-					var question = parent.parent().find('.question');
-
-					if(parent.find('.wrong').length == 0)
-						question.addClass('passed');
-					else
-						question.addClass('failed');
+					answerQuestion(answersContainer.parent().find('.question'), answersContainer);
 				}
 			}
 		});
 	});
+
+	function answerQuestion(question, answersContainer) {
+		if(answersContainer.find('.wrong').length == 0)
+			question.addClass('passed');
+		else
+			question.addClass('failed');
+
+		var total = $('.question').length;
+		var passed = $('.question.passed').length;
+		var failed = $('.question.failed').length;
+		var totalAnswered = passed + failed;
+
+		if(totalAnswered == total) {
+			var html = "";
+
+			html += "<div class='result'>";
+			html += "	<span class='passed'>" + passed + "</span>";
+			html += "	right answers from";
+			html += "	<span class='total'>" + total + "</span>";
+			html += "	questions.";
+			html += "</div>";
+			html += "<div class='close'>Hide results</div>";
+			
+			$('.modal').html(html);
+			$('.modalLayout').css('display', 'flex');
+			$('body').addClass('showTips');
+		}
+	}
 });

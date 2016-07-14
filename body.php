@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="/style/js/scripts.js"></script>
 </head>
-<body>
+<body class="showTips">
 	<div class="head">
 		<div class="container">
 			<div class="flex">
@@ -19,7 +19,7 @@
 				</div>
 				<div class="testType flex">
 					<div>Show answers after submitting the question</div>
-					<div id="toggler" class=""></div>
+					<div id="toggler" class="on"></div>
 				</div>
 			</div>
 		</div>
@@ -52,5 +52,14 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
+
+	<div class="modalLayout">
+		<div class="modalContainer">
+			<div class="modal">
+				
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
