@@ -1,5 +1,13 @@
 $(function(){
 	$(document).ready(function(){
+
+		$('#toggler').bind('click', function(){
+			if($(this).hasClass('on'))
+				$(this).removeClass('on');
+			else
+				$(this).addClass('on');
+		});
+
 		$('.task .answers .answer').bind('click', function(){
 			var parent = $(this).parent();
 			// If we've displaied answers - disable clicks on this task.

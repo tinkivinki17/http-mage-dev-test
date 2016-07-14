@@ -12,9 +12,15 @@
 <body>
 	<div class="head">
 		<div class="container">
-			<div href="/">
-				<img src="/style/images/magento-logo.svg">
-				<span>Developer Test</span>
+			<div class="flex">
+				<div class="logo">
+					<img src="/style/images/magento-logo.svg">
+					<span>Developer Test</span>
+				</div>
+				<div class="testType flex">
+					<div>Show answers after submitting the question</div>
+					<div id="toggler" class=""></div>
+				</div>
 			</div>
 		</div>
 	</div>
