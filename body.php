@@ -30,7 +30,7 @@
 				<div class="question">
 					<span>question <?php echo $tasksNumber; ?>:</span>
 					<div>
-						<pre><?php echo $task['question']; ?></pre>
+						<?php echo $task['question']; ?>
 					</div>
 
 					<?php $imagePath = "/style/images/{$tasksNumber}.png"; ?>
@@ -60,6 +60,15 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="footer">
+		<div class="container">
+			<div class="flex">
+				<div class="logo">
+					<img src="/style/images/magento-logo.svg">
+					<span>Developer Test</span>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

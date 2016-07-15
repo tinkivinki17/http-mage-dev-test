@@ -28,7 +28,8 @@ body {
     display: flex;
 }
 
-.head .container {
+.head .container,
+.footer .container {
     padding: 25px 100px;
     background-color: white;
 }
@@ -36,6 +37,11 @@ body {
 .head .container .flex {
     -webkit-justify-content: space-between;
     justify-content: space-between;
+}
+
+.footer .container .flex {
+    -webkit-justify-content: center;
+    justify-content: center;   
 }
 
 .logo {
@@ -49,19 +55,22 @@ body {
     padding-right: 20px;
 }
 
-.head .container div {
+.head .container div,
+.footer .container div {
     position: relative;
     height: 57px;
 }
 
-.head .container img {
+.head .container img,
+.footer .container img {
     width: 205px;
     position: absolute;
     left: 0px;
     top: 0px;
 }
 
-.head .container span {
+.head .container span,
+.footer .container span {
     color: #4d4d4d;
     font-size: 34px;
     font-weight: 100;
@@ -264,3 +273,17 @@ body {
 }
 
 .close:hover { background-color: #c0392b; }
+
+.footer .container img {
+    width: 150px;
+}
+
+.footer .container span {
+    left: 160px;
+    font-size: 28px;
+    top: 1px;
+}
+
+.footer .container div {
+    height: 42px;
+}
