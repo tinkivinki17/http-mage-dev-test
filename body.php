@@ -70,5 +70,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="progressBar">
+		<div class="finished"></div>
+	</div>
 </body>
 </html>

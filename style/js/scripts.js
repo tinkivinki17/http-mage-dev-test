@@ -48,10 +48,13 @@ $(function(){
 		else
 			question.addClass('failed');
 
-		var total = $('.question').length;
-		var passed = $('.question.passed').length;
-		var failed = $('.question.failed').length;
+		var total 		  = $('.question').length;
+		var passed 		  = $('.question.passed').length;
+		var failed 		  = $('.question.failed').length;
 		var totalAnswered = passed + failed;
+		var progress	  = 100 / total * totalAnswered;
+
+		$('.progressBar .finished').css('width', progress + '%');
 
 		if(totalAnswered == total) {
 			var html = "";
