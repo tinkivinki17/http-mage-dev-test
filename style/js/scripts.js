@@ -1,6 +1,5 @@
 $(function(){
 	$(document).ready(function(){
-
 		$('#toggler').bind('click', function(){
 			if($(this).hasClass('on')) {
 				$(this).removeClass('on');
@@ -52,9 +51,10 @@ $(function(){
 		var passed 		  = $('.question.passed').length;
 		var failed 		  = $('.question.failed').length;
 		var totalAnswered = passed + failed;
-		var progress	  = 100 / total * totalAnswered;
+		var progress	  = 2000 / total * totalAnswered;
 
 		$('.progressBar .finished').css('width', progress + '%');
+		$('.counter span').text(totalAnswered)
 
 		if(totalAnswered == total) {
 			var html = "";
