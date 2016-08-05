@@ -99,8 +99,8 @@ $tasks = array(
 		"question" => "Which method is called on a shipping carrier model to fetch a list of all available shipping methods, along with the rates associated with them, for a quote address?",
 		"answers"  => array(
 			1 => "A. collectShippingRates()", 
-			2 => "B. getAllowedMethodsO", 
-			3 => "C. getShippingRates ()", 
+			2 => "B. getAllowedMethods()", 
+			3 => "C. getShippingRates()", 
 			4 => "D. getAvailableRates()", 
 			5 => "E. collectRates()"
 		)
@@ -285,7 +285,7 @@ $tasks = array(
 			2 => 'B. $quoteltem->getProduct()->isvirtual() == true', 
 			3 => 'C. $quoteltem->getWeight() > 0', 
 			4 => 'D. $quoteItem->isShipSeparately() && SquoteItem->getHasChildren()', 
-			5 => 'E. $quoteItem()- >getQty() < Mage::getStoreConfig("carriers/tablerate/min_shipping_qty")'
+			5 => 'E. $quoteItem()->getQty() < Mage::getStoreConfig("carriers/tablerate/min_shipping_qty")'
 		)
 	),
 	31  => array(
@@ -355,12 +355,12 @@ $tasks = array(
 			4 => "D. The model class is primarily responsible for direct query operations such as retrieving and storing data and then rendering that data to the frontend view.")
 	),
 	38  => array(
-		"question" => "Which of the following actions will enable logging via calls to debugDataO on a native Magento payment method model?",
+		"question" => "Which of the following actions will enable logging via calls to debugData() on a native Magento payment method model?",
 		"answers"  => array(
 			1 => 'A. Set the protected property $_debug of the payment model to true', 
 			2 => "B. Set the config node default/payment/debug/[method code] to 1", 
 			3 => "C. Call Mage::register (‘payment_method_debug_’ . [method code], true);", 
-			4 => "D. Set the config node default/payment/ [method code]/debug to 1", 
+			4 => "D. Set the config node default/payment/[method code]/debug to 1", 
 			5 => "E. Call setDebug(true) on the payment method model"
 		)
 	),
@@ -395,7 +395,7 @@ $tasks = array(
 	42  => array(
 		"question" => "In which table could you find the order state?",
 		"answers"  => array(
-			1 => "A. sales_flat_order:", 
+			1 => "A. sales_flat_order", 
 			2 => "B. sales_flat_order_state", 
 			3 => "C. sales_flat_order_status", 
 			4 => "D. sales_flat_order_status_history"
@@ -429,7 +429,7 @@ $tasks = array(
 		)
 	),
 	46  => array(
-		"question" => "When setData ('some', 'value') is called on an EAV entity and the entity is saved to the database, __________________.",
+		"question" => "When setData('some', 'value') is called on an EAV entity and the entity is saved to the database, __________________.",
 		"answers"  => array(
 			1 => "A. the 'value' of the attribute named r some T is saved in the eav_values table", 
 			2 => "B. the 'value' of the attribute named ' some' is saved in one of the entity's tables depending on its datatype (for example, entityname_varchar)", 
@@ -991,13 +991,13 @@ $answers = array(
 	21 => array(4),
 	22 => array(2),
 	23 => array(3),
-	24 => array(1, 4),
+	24 => array(1, 3, 4, 6),
 	25 => array(2, 5),
 	26 => array(1),
 	27 => array(4, 6),
 	28 => array(5),
 	29 => array(2),
-	30 => array(1, 2),
+	30 => array(1, 2, 4),
 	31 => array(4),
 	32 => array(2, 5),
 	33 => array(5),
