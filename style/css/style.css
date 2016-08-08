@@ -297,6 +297,7 @@ body {
 	bottom: 0px;
 	left: 0px;
 	z-index: 10;
+    cursor: pointer;
 }
 
 .progressBar .finished {
@@ -309,7 +310,12 @@ body {
 
 .counter span { color: inherit; }
 
+.progressBar:hover .counter {
+    opacity: 1;
+}
+
 .counter {
+    opacity: 0;
 	color: white;
 	background-color: #2ecc71;
 	font-size: 18px;
@@ -338,8 +344,11 @@ body {
 	margin-left: -10px;
 }
 
-.counterContainer {
-    position: absolute;
-    max-width: 100%;
-    width: 100%;
+.counter.righter,
+.counter.lefter {
+    position: fixed;
 }
+
+.counter.righter { left: 5px; }
+.counter.lefter { right: 55px; }
+

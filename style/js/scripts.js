@@ -1,5 +1,7 @@
 $(function(){
 	$(document).ready(function(){
+		$(window).resize(function(){ adjustProgress(); });
+
 		$('#toggler').bind('click', function(){
 			if($(this).hasClass('on')) {
 				$(this).removeClass('on');
@@ -41,6 +43,20 @@ $(function(){
 		});
 	});
 
+	function adjustProgress() {
+		var progress = $('.progressBar .finished').width();
+		var windowWidth = $(window).width();
+		var counter = $('.progressBar .finished .counter');
+
+		if(progress <= (counter.width() / 2)) {
+			if(!counter.hasClass('righter')) { counter.addClass('righter'); }
+		} else if((windowWidth - progress) <= (counter.width() / 2)) {
+			if(!counter.hasClass('lefter')) { counter.addClass('lefter'); }
+		} else {
+			counter.removeClass('righter').removeClass('lefter');
+		}
+	}
+
 	function answerQuestion(question, answersContainer) {
 		if(answersContainer.find('.wrong').length == 0)
 			question.addClass('passed');
@@ -51,10 +67,12 @@ $(function(){
 		var passed 		  = $('.question.passed').length;
 		var failed 		  = $('.question.failed').length;
 		var totalAnswered = passed + failed;
-		var progress	  = 2000 / total * totalAnswered;
+		var progress	  = 100 / total * totalAnswered;
+
+		setTimeout(adjustProgress, 100);
 
 		$('.progressBar .finished').css('width', progress + '%');
-		$('.counter span').text(totalAnswered)
+		$('.counter span').text(totalAnswered);
 
 		if(totalAnswered == total) {
 			var html = "";
