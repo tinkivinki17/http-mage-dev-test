@@ -71,7 +71,13 @@
 		</div>
 	</div>
 	<div class="progressBar">
-		<div class="finished"></div>
+		<div class="finished">	
+			<div class="counter righter">
+				<span>0</span>
+				/
+				<?php echo count($tasks); ?>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

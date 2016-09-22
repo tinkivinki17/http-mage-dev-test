@@ -32,6 +32,7 @@ body {
 .footer .container {
     padding: 25px 100px;
     background-color: white;
+    max-width: 
 }
 
 .head .container .flex {
@@ -296,10 +297,58 @@ body {
 	bottom: 0px;
 	left: 0px;
 	z-index: 10;
+    cursor: pointer;
 }
 
 .progressBar .finished {
 	width: 0%;
+	max-width: 100%;
 	background-color: #27ae60;
 	height: 100%;
+	position: relative;
 }
+
+.counter span { color: inherit; }
+
+.progressBar:hover .counter {
+    opacity: 1;
+}
+
+.counter {
+    opacity: 0;
+	color: white;
+	background-color: #2ecc71;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 5px;
+	width: 100px;
+	box-sizing: border-box;
+	text-align: center;
+
+	position: absolute;
+	margin-right: -50px;
+	right: 0px;
+	bottom: 30px;
+}
+
+.counter:after {
+	content: '';
+	position: absolute;
+	display: block;
+	border: 10px solid transparent;
+	border-top: 10px solid #2ecc71;
+	width: 0px;
+	height: 0px;
+	bottom: -20px;
+	left: 50%;
+	margin-left: -10px;
+}
+
+.counter.righter,
+.counter.lefter {
+    position: fixed;
+}
+
+.counter.righter { left: 5px; }
+.counter.lefter { right: 55px; }
+
