@@ -25,28 +25,34 @@ body {
 }
 
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .head .container,
 .footer .container {
+    overflow: hidden;
     padding: 25px 100px;
     background-color: white;
-    max-width: 
 }
 
 .head .container .flex {
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .footer .container .flex {
-    -webkit-justify-content: center;
-    justify-content: center;   
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;   
 }
 
 .logo {
-    flex: 0 0 460px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 460px;
+            flex: 0 0 460px;
 }
 
 .testType div:first-child {
@@ -235,23 +241,34 @@ body {
     left: 0px;
     background-color: rgba(0, 0, 0, .75);
     z-index: 100;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
-.modalContainer { display: flex; }
+.modalContainer { 
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
 
 .modalLayout:after,
 .modalLayout:before,
 .modalContainer:after,
 .modalContainer:before {
     content: '';
-    flex: 1 1 50%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
     display: block;
 }
 
 .modalContainer,
 .modal {
-    flex: 0 0 auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
 }
 
 .result, .title {
@@ -285,7 +302,11 @@ body {
 }
 
 .close:hover { background-color: #c0392b; }
-
+.footer .logo {
+    -ms-flex: 0 0 360px;
+    flex: 0 0 360px;
+    width: 360px;
+}
 .footer .container img {
     width: 150px;
 }
@@ -301,22 +322,22 @@ body {
 }
 
 .progressBar {
-	position: fixed;
-	width: 100%;
-	height: 10px;
-	background-color: #3498db;
-	bottom: 0px;
-	left: 0px;
-	z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 10px;
+    background-color: #3498db;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
     cursor: pointer;
 }
 
 .progressBar .finished {
-	width: 0%;
-	max-width: 100%;
-	background-color: #27ae60;
-	height: 100%;
-	position: relative;
+    width: 0%;
+    max-width: 100%;
+    background-color: #27ae60;
+    height: 100%;
+    position: relative;
 }
 
 .counter span { color: inherit; }
@@ -327,32 +348,32 @@ body {
 
 .counter {
     opacity: 0;
-	color: white;
-	background-color: #2ecc71;
-	font-size: 18px;
-	padding: 5px;
-	border-radius: 5px;
-	width: 100px;
-	box-sizing: border-box;
-	text-align: center;
+    color: white;
+    background-color: #2ecc71;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100px;
+    box-sizing: border-box;
+    text-align: center;
 
-	position: absolute;
-	margin-right: -50px;
-	right: 0px;
-	bottom: 30px;
+    position: absolute;
+    margin-right: -50px;
+    right: 0px;
+    bottom: 30px;
 }
 
 .counter:after {
-	content: '';
-	position: absolute;
-	display: block;
-	border: 10px solid transparent;
-	border-top: 10px solid #2ecc71;
-	width: 0px;
-	height: 0px;
-	bottom: -20px;
-	left: 50%;
-	margin-left: -10px;
+    content: '';
+    position: absolute;
+    display: block;
+    border: 10px solid transparent;
+    border-top: 10px solid #2ecc71;
+    width: 0px;
+    height: 0px;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -10px;
 }
 
 .counter.righter,
@@ -393,3 +414,85 @@ form button:hover {
 }
 
 #limitForm { display: none; }
+
+@media (max-width: 640px) {
+    .flex {
+        display: block;
+    }
+
+    .head .container, 
+    .footer .container,
+    .container {
+        padding: 10px 0;
+    }
+
+    .head .container div,
+    .footer .container div {
+        height: 35px;
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .head .container img,
+    .footer .container img {
+        width: 125px;
+    }
+
+    .head .container span,
+    .footer .container span {
+        font-size: 18px;
+        left: 130px;
+    }
+
+    .head .container .flex {
+        height: auto;
+    }
+
+    .testType.flex > div:first-child {
+        position: absolute;
+        font-size: 24px;
+        left: 40px;
+        top: 5px;
+    }
+
+    .task .answers { margin: 0; }
+
+    .task .answers,
+    .task .question {
+        word-break: break-all;
+        font-size: 14px;
+        border-radius: 0 !important;
+    }
+
+    .task {
+        padding: 0px;
+        border-radius: 0;
+    }
+
+    .task .question .image { margin: 20px 0; }
+
+    .task .question .image img {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .counter { opacity: .75; }
+
+    .result, .title { font-size: 24px; }
+    form input { width: 130px; }
+
+    .result .passed, .result .total { font-size: 32px; }
+    .modal {
+        max-width: 240px;
+        text-align: center;
+    }
+
+    .close {
+        width: 240px;
+        font-size: 24px;
+    }
+
+    .task .answers .answer { padding-right: 10px; }
+    .footer .container span { top: 7px; }
+    .footer { padding-bottom: 10px; }
+}
