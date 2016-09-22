@@ -2,6 +2,11 @@ $(function(){
 	$(document).ready(function(){
 		$(window).resize(function(){ adjustProgress(); });
 
+		if($('#limitForm').hasClass('visible')) {
+			$('.modal').html($('#limitForm').html());
+			$('.modalLayout').css('display', 'flex');
+		}
+
 		$('#toggler').bind('click', function(){
 			if($(this).hasClass('on')) {
 				$(this).removeClass('on');
