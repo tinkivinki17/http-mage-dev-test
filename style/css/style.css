@@ -152,6 +152,17 @@ body {
     padding: 5px;
     cursor: pointer;
     border-left: 10px solid white;
+    padding-left: 20px;
+    position: relative;
+}
+
+.task .answers .answer:before {
+    font-family: 'FontAwesome';
+    font-size: 24px;
+    content: "\f105";
+    position: absolute;
+    left: 5px;
+    top: 3px;
 }
 
 .task .answers .answer:hover {

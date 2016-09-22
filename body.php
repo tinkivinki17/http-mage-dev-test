@@ -42,7 +42,6 @@
         <?php foreach ($questions as $tasksNumber => $task) : ?>
             <div class="task">
                 <div class="question">
-                    <span>question <?php echo $tasksNumber; ?>:</span>
                     <div>
                         <?php echo $task['question']; ?>
                     </div>
