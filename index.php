@@ -1072,11 +1072,14 @@ $answers = array(
 	102 => array(3)
 );
 
-function shuffle_assoc($list) { 
+function shuffle_assoc($list, $limit = null) { 
 	if (!is_array($list)) return $list; 
 
 	$keys = array_keys($list); 
 	shuffle($keys); 
+
+	if (!empty($limit)) $keys = array_slice($keys, 0, $limit);
+
 	$random = array(); 
 	foreach ($keys as $key) 
 		$random[$key] = $list[$key]; 

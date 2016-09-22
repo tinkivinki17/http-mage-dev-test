@@ -17,6 +17,13 @@
 					<img src="/style/images/magento-logo.svg">
 					<span>Developer Test</span>
 				</div>
+				<div class="flex">
+					<form method="GET">
+						<?php $limit = (isset($_GET['limit'])) ? filter_var($_GET['limit'], FILTER_VALIDATE_INT) : 102; ?>
+						<input type="text" name="limit" value="<?php echo $limit;?>" />
+						<button>Set limit</button>
+					</form>
+				</div>
 				<div class="testType flex">
 					<div>Show answers after submitting the question</div>
 					<div id="toggler" class="on"></div>
@@ -25,7 +32,8 @@
 		</div>
 	</div>
 	<div class="container">
-		<?php foreach (shuffle_assoc($tasks) as $tasksNumber => $task) : ?>
+		<?php $questions = shuffle_assoc($tasks, $limit); ?>
+		<?php foreach ($questions as $tasksNumber => $task) : ?>
 			<div class="task">
 				<div class="question">
 					<span>question <?php echo $tasksNumber; ?>:</span>
@@ -75,7 +83,7 @@
 			<div class="counter righter">
 				<span>0</span>
 				/
-				<?php echo count($tasks); ?>
+				<?php echo count($questions); ?>
 			</div>
 		</div>
 	</div>
