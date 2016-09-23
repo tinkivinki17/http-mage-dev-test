@@ -5,7 +5,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css' />
     <link type='text/css' href="/style/css/style.css" rel='stylesheet' media='screen' />
-
+    <meta name="viewport" content="width=device-width">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/style/js/scripts.js"></script>
 </head>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="testType flex">
-                    <div>Show answers after submitting the question</div>
+                    <div>Tips</div>
                     <div id="toggler" class="on"></div>
                 </div>
             </div>
@@ -42,7 +42,6 @@
         <?php foreach ($questions as $tasksNumber => $task) : ?>
             <div class="task">
                 <div class="question">
-                    <span>question <?php echo $tasksNumber; ?>:</span>
                     <div>
                         <?php echo $task['question']; ?>
                     </div>
