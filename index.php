@@ -247,15 +247,14 @@ $tasks = array(
             4 => 'catalog_product_option.list, with arguments $type="related", $product_id')
     ),
     27  => array(
-        "question" => "Which two of the following will return an instance of a block object?
-    (Choose two)",
+        "question" => "Which two of the following will return an instance of a block object? (Choose two)",
         "answers"  => array(
             1 => "Mage::getBlock('page/html_header');", 
             2 => "Mage::app()->createBlock('page/html_header');", 
             3 => "Mage::createBlock('page/html_header');", 
             4 => "Mage::app()->getLayout()->createBlock('page/html_header');", 
             5 => "Mage::getLayout()->createBlock('page/html_header');", 
-            6 => "age::app()->getLayout()->createBlock('page/html_header')- >setTe mplate('page/html/header.phtml');"
+            6 => "Mage::app()->getLayout()->createBlock('page/html_header')->setTemplate('page/html/header.phtml');"
         )
     ),
     28  => array(
@@ -298,7 +297,7 @@ $tasks = array(
         )
     ),
     32  => array(
-        "question" => "Which two of the following methods can be used to bad an entity s data from its configured data table? (Choose two)",
+        "question" => "Which two of the following methods can be used to load an entity s data from its configured data table? (Choose two)",
         "answers"  => array(
             1 => '$entityModel->loadEntity($id)', 
             2 => '$entityModel->load($attributeValue, SattributeCode)', 
@@ -369,7 +368,7 @@ $tasks = array(
         "answers"  => array(
             1 => "fullReindex()", 
             2 => "reindexAll()", 
-            3 => "processEvent ()", 
+            3 => "processEvent()", 
             4 => "reindex()"
         )
     ),
@@ -431,7 +430,7 @@ $tasks = array(
     46  => array(
         "question" => "When setData('some', 'value') is called on an EAV entity and the entity is saved to the database, __________________.",
         "answers"  => array(
-            1 => "the 'value' of the attribute named r some T is saved in the eav_values table", 
+            1 => "the 'value' of the attribute named some is saved in the eav_values table", 
             2 => "the 'value' of the attribute named ' some' is saved in one of the entity's tables depending on its datatype (for example, entityname_varchar)", 
             3 => "the data will be stored in the EAV registry making ' some' 'value' available to the entity", 
             4 => "the 'value' of the attribute named 'some' is saved in the eav attribute values table"
@@ -493,9 +492,9 @@ $tasks = array(
     53  => array(
         "question" => 'Which of the following lines includes a payment method object?',
         "answers" => array(
-            1 => '$quote->getShippingAddress()- >setPaymentMethod(isset($data[ "m ethod1 ]) ? $data[ "method"] : null); inside Mage_Checkout_Model_Type_Onepage', 
-            2 => '.public function setPayment(Mage_Sales_Model_Quote_Payment $payment) inside Mage_Sales_Model_Quote', 
-            3 => '$method = $this->getMethodInstance (); inside Mage_Sales_Model_Quote_Payment', 
+            1 => '$quote->getShippingAddress()->setPaymentMethod(isset($data["method"]) ? $data["method"] : null); inside Mage_Checkout_Model_Type_Onepage', 
+            2 => 'public function setPayment(Mage_Sales_Model_Quote_Payment $payment) inside Mage_Sales_Model_Quote', 
+            3 => '$method = $this->getMethodInstance(); inside Mage_Sales_Model_Quote_Payment', 
             4 => '$instance->setInfoInstance($this); inside Mage_Payment_Model_Info'
         )
     ),
@@ -628,7 +627,7 @@ $tasks = array(
         "question" => 'In order to successfully register and configure a new entity capable of being saved and loaded from the database, you must create a model and which three of the following? (Choose three)',
         "answers" => array(
             1 => 'a collection class', 
-            2 => 'configuration settings in your module`s config.xml ', 
+            2 => 'configuration settings in your module`s config.xml', 
             3 => 'an entry in Mage: :$_registry', 
             4 => 'a record in the eav_entity table', 
             5 => 'a resource model', 
@@ -696,7 +695,7 @@ $tasks = array(
     74  => array(
         "question" => 'You want to filter a product collection so that it will return only SKUs 12 and 123. You will use a call to $collection->addFieldToFilter("sku", ____________); Two of the following arrays could be used to complete that call correctly. Which two? (Choose two)',
         "answers" => array(
-            1 => 'array(sku => 12, "sku" => 123)', 
+            1 => 'array("sku" => 12, "sku" => 123)', 
             2 => 'array(array("eq" => 12), array("eq" => 123))', 
             3 => 'array(12 => true, 123 => true) ', 
             4 => 'array(12, 123)', 
@@ -813,16 +812,16 @@ $tasks = array(
             1 => 'Layout update handles must always match a module_controller_action pattern such as catalog_product_view.', 
             2 => 'There may never be more than one layout update handle per request.', 
             3 => 'Layout update handles are declared at any level of the layout XML hierarchy.', 
-            4 => 'A layout update handle may be specified as a string argument when calling loadLayout ().'
+            4 => 'A layout update handle may be specified as a string argument when calling loadLayout().'
         )
     ),
     87  => array(
         "question" => 'Which three of the following will return an instance of a resource model? (Choose three)',
         "answers" => array(
-            1 => 'Mage::rgetResourceModel("customer/customer");', 
+            1 => 'Mage::getResourceModel("customer/customer");', 
             2 => 'Mage::getResourceSingleton("customer/customer");', 
             3 => 'Mage::getModel("customer/customer")->getResourceModel();', 
-            4 => 'Mage::rgetResourceModel("customer/customer")->getlnstance();', 
+            4 => 'Mage::getResourceModel("customer/customer")->getlnstance();', 
             5 => 'Mage::getModel("customer/customer")->getResource();', 
             6 => 'Mage::getResourceModel("customer/customer")->getResource();'
         )
@@ -865,7 +864,7 @@ $tasks = array(
         )
     ),
     92  => array(
-        "question" => 'In which order are the following methods executed after Mage_Core_Model_Abstract::save () is called?<br>1 - Mage_Core_Model_Abstract::_beforeSave()<br>2 - Mage_Core_Model_Abstract::_afterSave()<br>3 -  age_Core_Model_Mysq14_Abstract::_beforeSave()<br>4 - Mage_Core_Model_Mysq14_Abstract::_afterSave()<br>5 - Mage Core Model Abstract::afterCommitCallback()',
+        "question" => 'In which order are the following methods executed after Mage_Core_Model_Abstract::save () is called?<br>1 - Mage_Core_Model_Abstract::_beforeSave()<br>2 - Mage_Core_Model_Abstract::_afterSave()<br>3 -  Mage_Core_Model_Mysq14_Abstract::_beforeSave()<br>4 - Mage_Core_Model_Mysq14_Abstract::_afterSave()<br>5 - Mage Core Model Abstract::afterCommitCallback()',
         "answers" => array(
             1 => '1, 2, 3, 4, 5', 
             2 => '1, 3, 2, 4, 5', 
