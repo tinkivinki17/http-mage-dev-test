@@ -14,7 +14,7 @@
 	<div id="limitForm" <?php if(!isset($_GET['limit'])) : ?> class="visible" <?php endif; ?>>
         <form method="GET">
             <div class="title">Choose quetions limit</div>
-            <?php $limit = (isset($_GET['limit'])) ? filter_var($_GET['limit'], FILTER_VALIDATE_INT) : 102; ?>
+            <?php $limit = (isset($_GET['limit'])) ? filter_var($_GET['limit'], FILTER_VALIDATE_INT) : count($tasks); ?>
             <div class="flex">
                 <input type="text" name="limit" id="limit" value="<?php echo $limit;?>" />
                 <button>GO!</button>

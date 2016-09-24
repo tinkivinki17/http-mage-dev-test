@@ -551,7 +551,7 @@ $tasks = array(
         "answers" => array(
             1 => 'Declare your module`s block class prefix in the config.xml file. ', 
             2 => 'Implement a sub-class of Mage_Adminhtml_Block_widget_Form.', 
-            3 => 'Implement a sub-class of Mage_Adminhtml_Block_Form_Abstcact.', 
+            3 => 'Implement a sub-class of Mage_Adminhtml_Block_Form_Abstract.', 
             4 => 'Create sub-classes of Mage_Adminhtml_Block_Form_Element_Abstract for each form field to be presented.', 
             5 => 'Add a set of configuration values in the module`s config.xml defining the form fields to be displayed,'
         )
@@ -963,7 +963,111 @@ $tasks = array(
             3 => 'in a separate table, sales_flat_quote_item_option', 
             4 => 'Magento doesn`t store persistent data about custom options; only thenew price and new SKU are stored.'
         )
-    )
+    ),
+
+    103 => array(
+        "question" => 'With which three kinds of product relations do Magento Catalog Target Rules deal? (Choose three)',
+        "answers" => array(
+            1 => 'The relations between a configurable product and its child products',
+            2 => 'The relations between a bundle product and its child products',
+            3 => 'The relations among products linked as cross-sell products',
+            4 => 'The relations between a product and its custom options',
+            5 => 'The relations among products linked as related products',
+            6 => 'The relations among products linked as upsell products ',
+        )
+    ),
+
+    104 => array(
+        "question" => 'What is the purpose of Catalog Target rules?',
+        "answers" => array(
+            1 => 'To extend Catalog Price Rules to be used for related products.',
+            2 => 'To provide a mechanism for rendering a list of additional products on the product page.',
+            3 => 'To provide a mechanism for rendering a list of custom product options.',
+            4 => 'To provide a mechanism for easier selection options for configurable products.',
+        )
+    ),
+
+    105 => array(
+        "question" => 'When $this->loadLayout("foo_bar_baz") is called in a standard front action, what is the effect on the layout update object instance?',
+        "answers" => array(
+            1 => 'foo_bar_baz will be the only handle added',
+            2 => 'loadLayout() does not take any arguments, so there is no effect',
+            3 => 'Only two handles will be added: foo_bar_baz and default',
+            4 => 'Foo_bar_baz will be added instead of the default handle',
+        )
+    ),
+
+    106 => array(
+        "question" => 'Which kind of class is responsible for calculating the actual amount of reward points in every case?',
+        "answers" => array(
+            1 => 'Reward model (Enterprise_Reward_Model_Reward)',
+            2 => 'Action model (derivatives from Entet:prise_Reward_Model_Action)',
+            3 => 'Event model (derivatives from Enterprise_Reward_Model_Event)',
+            4 => 'Calculation model (Enterprise_Reward_Model_Calculator)',
+        )
+    ),
+
+    107 => array(
+        "question" => 'You need to implement private sales utilizing Website Restrictions as provided by the Enterprise Edition of Magento, and when customers are not logged in, you want them to be redirected to a landing page. Where in the Magento admin would you find the settings needed for this task?',
+        "answers" => array(
+            1 => 'System->Configuration->Enterprise->WebsiteRestrictions',
+            2 => 'System->Configuration->General->Website Restrictions',
+            3 => 'System->Manage Stores->Edit Website',
+            4 => 'System->Permissions->Website Restrictions',
+        )
+    ),
+
+    108 => array(
+        "question" => 'When the load method is called on an EAV-based data model, which of the following oA. default/enterprise_reward/general/expiry_calculation with a value of static B. default/enterprise_reward/general/expiry with a value of static C. default/reward_points/general/expiry_calculation with a value of static D. default/enterprise_reward/expiry_calculation with a value of staticccurs before the load method returns?',
+        "answers" => array(
+            1 => 'walkAttributes is used to call load on the backend model of each attribute to load its corresponding value.',
+            2 => '_afterLoad is called on the source model of each loaded attribute that has one.',
+            3 => 'walkAttributes is used to call afterLoad on the backend model of each loaded attribute that has one.',
+            4 => 'walkAttributes is used to iterate over each attribute and load its data from the correct table on the database.',
+        )
+    ),
+
+    109 => array(
+        "question" => 'You need to override the default value for the expiry calculation for reward points used by the Reward Points module. Which of the following XML fragments should you use in your modules config.xml?',
+        "answers" => array(
+            1 => 'default/enterprise_reward/general/expiry_calculation with a value of static',
+            2 => 'default/enterprise_reward/general/expiry with a value of static',
+            3 => 'default/reward_points/general/expiry_calculation with a value of static',
+            4 => 'default/enterprise_reward/expiry_calculation with a value of static',
+        )
+    ),
+
+    110 => array(
+        "question" => 'Which two of the following parameters are necessary to define a usable massaction item? (Choose two)',
+        "answers" => array(
+            1 => 'label',
+            2 => 'value',
+            3 => 'additional',
+            4 => 'url',
+            5 => 'confirm',
+        )
+    ),
+
+    111 => array(
+        "question" => 'Which three of the following statements accurately describe differences between EAV and Flat catalogs when accessing child categories of a category? (Choose three)',
+        "answers" => array(
+            1 => "A different method must be used to get the child categories if flat catalog is enabled.",
+            2 => "The type of the results differs between EAV and flat catalog.",
+            3 => "Results also include children of children if flat catalog is enabled.",
+            4 => "Results contain more information for each child if flat catalog is disabled.",
+            5 => "The children's IDs of EAV and Flat tables are different.",
+        )
+    ),
+
+    112 => array(
+        "question" => 'Which module is responsible for Store Credit functionality in the native Magento?',
+        "answers" => array(
+            1 => 'Enterprise/StoreCredit',
+            2 => 'Enterprise/CustomerBalance',
+            3 => 'Enterprise/Sales',
+            4 => 'Enterprise/Customer',
+        )
+    ),
 );
 
 
@@ -1069,7 +1173,17 @@ $answers = array(
     99 => array(1),
     100 => array(2),
     101 => array(2, 3),
-    102 => array(3)
+    102 => array(3),
+    103 => array(3, 5, 6),
+    104 => array(2),
+    105 => array(4),
+    106 => array(2),
+    107 => array(2),
+    108 => array(3),
+    109 => array(1),
+    110 => array(1, 4),
+    111 => array(1, 2, 4),
+    112 => array(2),
 );
 
 function shuffle_assoc($list, $limit = null)
