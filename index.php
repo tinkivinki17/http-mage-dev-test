@@ -78,11 +78,11 @@ $tasks = array(
         )
     ),
     9   => array(
-        "question" => "What is the difference in the effect of calling the invoice capture () method versus the invoice pay () method?",
+        "question" => "What is the difference in the effect of calling the invoice capture() method versus the invoice pay() method?",
         "answers"  => array(
-            1 => "No difference: pay () will always call capture ().", 
-            2 => "pay () will trigger the payment and capture() will not.", 
-            3 => "capture () will trigger the payment and pay () will not.", 
+            1 => "No difference: pay() will always call capture().", 
+            2 => "pay() will trigger the payment and capture() will not.", 
+            3 => "capture() will trigger the payment and pay() will not.", 
             4 => "The difference is determined by the payment method implementation."
         )
     ),
@@ -157,7 +157,7 @@ $tasks = array(
             1 => "Order", 
             2 => "Payment", 
             3 => "Invoice", 
-            4 => "payment_method"
+            4 => "Payment Method"
         )
     ),
     18  => array(
@@ -218,7 +218,7 @@ $tasks = array(
         )
     ),
     24  => array(
-        "question" => "Which four of these xml elements are used in system, xml to configure a system configuration property? (Choose four)",
+        "question" => "Which four of these xml elements are used in system.xml to configure a system configuration property? (Choose four)",
         "answers"  => array(
             1 => "backend_model", 
             2 => "admin_model", 
@@ -313,7 +313,7 @@ $tasks = array(
             2 => "Mage_Core_Block_Abstract", 
             3 => "Mage_Adminhtml_Block_Abstract", 
             4 => "Mage_Adminhtml_Block_Template", 
-            5 => "Varien Data Form Abstract"
+            5 => "Varien_Data_Form_Abstract"
         )
     ),
     34  => array(
@@ -580,7 +580,7 @@ $tasks = array(
         "answers" => array(
             1 => '$collection->saveAll();', 
             2 => '$collection->saveltems();', 
-            3 => '$collection->saveAllltems ();', 
+            3 => '$collection->saveAllltems();', 
             4 => '$collection->save();'
         )
     ),
@@ -864,7 +864,7 @@ $tasks = array(
         )
     ),
     92  => array(
-        "question" => 'In which order are the following methods executed after Mage_Core_Model_Abstract::save () is called?<br>1 - Mage_Core_Model_Abstract::_beforeSave()<br>2 - Mage_Core_Model_Abstract::_afterSave()<br>3 -  Mage_Core_Model_Mysq14_Abstract::_beforeSave()<br>4 - Mage_Core_Model_Mysq14_Abstract::_afterSave()<br>5 - Mage Core Model Abstract::afterCommitCallback()',
+        "question" => 'In which order are the following methods executed after Mage_Core_Model_Abstract::save() is called?<br>1 - Mage_Core_Model_Abstract::_beforeSave()<br>2 - Mage_Core_Model_Abstract::_afterSave()<br>3 -  Mage_Core_Model_Mysq14_Abstract::_beforeSave()<br>4 - Mage_Core_Model_Mysq14_Abstract::_afterSave()<br>5 - Mage Core Model Abstract::afterCommitCallback()',
         "answers" => array(
             1 => '1, 2, 3, 4, 5', 
             2 => '1, 3, 2, 4, 5', 
@@ -1001,7 +1001,7 @@ $tasks = array(
         "question" => 'Which kind of class is responsible for calculating the actual amount of reward points in every case?',
         "answers" => array(
             1 => 'Reward model (Enterprise_Reward_Model_Reward)',
-            2 => 'Action model (derivatives from Entet:prise_Reward_Model_Action)',
+            2 => 'Action model (derivatives from Enterprise_Reward_Model_Action)',
             3 => 'Event model (derivatives from Enterprise_Reward_Model_Event)',
             4 => 'Calculation model (Enterprise_Reward_Model_Calculator)',
         )

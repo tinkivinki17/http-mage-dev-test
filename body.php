@@ -48,11 +48,11 @@
 
                     <?php $imagePath = "/style/images/{$tasksNumber}.png"; ?>
 
-                    <? if(file_exists(getcwd() . $imagePath)) : ?>
+                    <?php if(file_exists(getcwd() . $imagePath)) : ?>
                         <div class="image">
                             <img src="<?php echo $imagePath; ?>" />
                         </div>
-                    <? endif; ?>
+                    <?php endif; ?>
                 </div>
 
                 <div class="answers">
